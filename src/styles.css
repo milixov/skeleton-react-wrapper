@@ -1,0 +1,123 @@
+.wrapper {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.root {
+  position: relative;
+  overflow-x: hidden;
+  --forground-color: 255, 255, 255;
+  --background-color: 224, 224, 224;
+  background-color: rgba(var(--forground-color), 1);
+}
+
+.trick {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  z-index: 2;
+}
+
+.gradient {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(var(--forground-color), 0) 80%,
+    rgba(var(--forground-color), 0.1) 50%,
+    rgba(var(--forground-color), 0.5) 90%,
+    rgba(var(--forground-color), 0.3) 95%,
+    rgba(var(--forground-color), 0) 100%
+  );
+  transform: translateX(0%);
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.element {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  margin-top: 16px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bottom {
+  max-width: 100%;
+  margin: 110px 8px 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.line1 {
+  height: 15px;
+  width: 70%;
+  background-color: rgba();
+}
+
+.fill {
+  background-color: rgba(var(--background-color));
+}
+
+.line2 {
+  height: 10px;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.line3 {
+  height: 10px;
+  width: 50%;
+  margin-top: 5px;
+}
+
+.line4 {
+  height: 10px;
+  width: 75%;
+  margin-top: 20px;
+}
+
+.left {
+  flex-grow: 1;
+}
+
+.circle {
+  height: 26px;
+  width: 26px;
+
+  margin-left: 8px;
+  border-radius: 13px;
+}
+
+.badge {
+  height: 16px;
+  margin-right: 8px;
+  width: 45px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
